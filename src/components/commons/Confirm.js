@@ -11,9 +11,9 @@ const Confirm = ({ visible, children, onAccept, onDeclide }) => {
       transparent={true}
       visible={visible}
     >
-      <View stlye={styles.container}>
-        <CardSection stlye={styles.section}>
-          <Text stlye={styles.text}>
+      <View style={styles.container}>
+        <CardSection style={styles.section}>
+          <Text style={styles.text}>
             {children}
           </Text>
         </CardSection>

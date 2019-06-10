@@ -27,21 +27,23 @@ class EmployeeForm extends Component {
             onChangeText={value => this.props.employeeUpdate({ prop: 'phone', value })} />
         </CardSection>
 
-        <CardSection style={styles.section} >
-          <Text style={styles.picker}>Shift</Text>
-          <Picker
-            style={{ flex: 1 }}
-            selectedValue={shift}
-            onValueChange={value => this.props.employeeUpdate({ prop: 'shift', value })}
-          >
-            <Picker.Item label="Monday" value="Monday" />
-            <Picker.Item label="Tuesday" value="Tuesday" />
-            <Picker.Item label="Wednesday" value="Wednesday" />
-            <Picker.Item label="Thursday" value="Thursday" />
-            <Picker.Item label="Friday" value="Friday" />
-            <Picker.Item label="Saturday" value="Saturday" />
-            <Picker.Item label="Sunday" value="Sunday" />
-          </Picker>
+        <CardSection style={styles.section}>
+          <View style={styles.container}>
+            <Text style={styles.pickerText}>Shift</Text>
+            <Picker
+              style={styles.pickerField}
+              selectedValue={shift}
+              onValueChange={value => this.props.employeeUpdate({ prop: 'shift', value })}
+            >
+              <Picker.Item label="Monday" value="Monday" />
+              <Picker.Item label="Tuesday" value="Tuesday" />
+              <Picker.Item label="Wednesday" value="Wednesday" />
+              <Picker.Item label="Thursday" value="Thursday" />
+              <Picker.Item label="Friday" value="Friday" />
+              <Picker.Item label="Saturday" value="Saturday" />
+              <Picker.Item label="Sunday" value="Sunday" />
+            </Picker>
+          </View>
         </CardSection>
       </View>
     );
@@ -50,11 +52,22 @@ class EmployeeForm extends Component {
 
 const styles = {
   section: {
-    flexDirection: 'column'
+
   },
-  picker: {
+  container: {
+    flexDirection: 'row',
+    flex: 1
+  },
+  pickerField: {
+    flex: 2
+  },
+  pickerText: {
+    color: '#000',
     fontSize: 18,
-    paddingLeft: 20
+    paddingLeft: 20,
+    paddingTop: 10,
+    flex: 1,
+    alignSelf: 'center'
   }
 };
 
