@@ -4,7 +4,7 @@ import { CardSection } from './commons';
 
 class ListItem extends Component {
   render() {
-    const { name } = this.props.emplyoee;
+    const { name } = this.props.employee;
 
     return (
       <CardSection>
